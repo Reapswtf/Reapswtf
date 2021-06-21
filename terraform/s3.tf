@@ -1,11 +1,13 @@
 resource "aws_s3_bucket" "lambda_upload_bucket" {
   bucket = "bucket-images-exif"
   acl    = "private"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket" "lambda_noexif_bucket" {
   bucket = "bucket-images-noexif"
   acl    = "private"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_object" "images_folder" {
